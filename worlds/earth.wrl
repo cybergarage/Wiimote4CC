@@ -1,0 +1,49 @@
+#VRML V2.0 utf8
+DEF earth Transform {
+	translation 0 0 0
+	rotation 0 1 0 -1.78407
+	scale 1 1 1
+	scaleOrientation 0 0 1 0
+	center 0 0 0
+	children [
+		Shape {
+			appearance Appearance {
+				material Material {
+					diffuseColor 0.8 0.8 0.8
+					ambientIntensity 0.2
+					specularColor 0 0 0
+					emissiveColor 0 0 0
+					shininess 0.2
+					transparency 0
+				}
+				texture ImageTexture {
+					repeatS TRUE
+					repeatT TRUE
+					url [
+						"earth.jpg"
+					]
+				}
+			}
+			geometry Sphere {
+				radius 5
+			}
+		}
+	]
+}
+Viewpoint {
+	fieldOfView 0.785398
+	jump TRUE
+	position 0 0 26.5444
+	orientation 0 0 1 0
+	description ""
+}
+NavigationInfo {
+	visibilityLimit 0
+	headlight TRUE
+	speed 1
+}
+Background {
+	skyColor [
+		0 0 0
+	]
+}
