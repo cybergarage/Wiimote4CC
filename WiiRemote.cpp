@@ -41,13 +41,9 @@ bool WiiRemote::open()
 	if (!openRes)
 		return false;
 
-	unsigned char *outBuf = getOutputByteBuffer();
+	setLEDs(false, false, false, false);
 
-	clearOutputByteBuffer();
-	outBuf[0] = 0x11;
-	outBuf[1] = 0x00;
-	if (write(outBuf, 2) <= 0)
-		return false;
+	unsigned char *outBuf = getOutputByteBuffer();
 
 	clearOutputByteBuffer();
 	outBuf[0] = 0x12;
@@ -58,3 +54,29 @@ bool WiiRemote::open()
 
 	return true;
 }
+
+////////////////////////////////////////////////
+//	setLEDs
+////////////////////////////////////////////////
+
+bool WiiRemote::setLEDs(bool led1, bool led2, bool led3, bool led4)
+{
+	unsigned char *outBuf = getOutputByteBuffer();
+
+	clearOutputByteBuffer();
+	outBuf[0] = 0x11;
+	outBuf[1] = 0x00;
+	if (led1)
+		outBuf[1]  |= 0x10;
+	if (led2)
+		outBuf[1]  |= 0x20;
+	if (led3)
+		outBuf[1]  |= 0x40;
+	if (led4)
+		outBuf[1]  |= 0x80;
+	if (write(outBuf, 2) <= 0)
+		return false;
+
+	return true;
+}
+

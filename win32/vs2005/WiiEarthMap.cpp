@@ -191,7 +191,7 @@ void InitializeSceneGraph(HWND hWnd, SceneGraph *sg)
 ////////////////////////////////////////////////////////// 
 
 #define WII_EARTHMAP_OGL_FONT_NAME "Lucida Sans Unicode"
-#define WII_EARTHMAP_OGL_FONT_SIZE 18
+#define WII_EARTHMAP_OGL_FONT_SIZE 24
 
 void DrawText2D(int x, int y, const char *string)
 {	
