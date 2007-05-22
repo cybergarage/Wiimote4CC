@@ -66,6 +66,13 @@ public:
 		return mInputBuf;
 	}
 
+	unsigned char getInputByte(int offset)
+	{
+		if (!mInputBuf || mDevCaps.InputReportByteLength <= offset)
+			return 0;
+		return mInputBuf[offset];
+	}
+
 	void clearInputByteBuffer()
 	{
 		if (mInputBuf)
@@ -86,6 +93,13 @@ public:
 	{
 		if (mOutputBuf)
 			memset(mOutputBuf, 0, mDevCaps.OutputReportByteLength);
+	}
+
+	bool IsButtonPressed(int offset, unsigned char mask)
+	{
+		if (!mInputBuf)
+			return false;
+		return (mInputBuf[offset] & mask) ? true : false;
 	}
 
 #if defined(WIN32)

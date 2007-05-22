@@ -179,7 +179,7 @@ int UsbHID::write(unsigned char *data, int dataLen)
 	DWORD wroteByte;
 	wroteByte = 0;
 #if defined(CX3D_HID_USE_CTLREQ)
-	wroteByte = HidD_SetOutputReport(mDevHandle, data, dataLen);
+	wroteByte = HidD_SetOutputReport(mDevHa/ndle, data, dataLen);
 #else
 	if (WriteFile(mDevHandle, data, mDevCaps.OutputReportByteLength, &wroteByte, &mOverLapped))
 		GetOverlappedResult(mDevHandle, &mOverLapped, &wroteByte, TRUE);

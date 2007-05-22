@@ -48,7 +48,7 @@ bool WiiRemote::open()
 	clearOutputByteBuffer();
 	outBuf[0] = 0x12;
 	outBuf[1] = 0x00;
-	outBuf[2] = 0x31;
+	outBuf[2] = 0x33;
 	if (write(outBuf, 3) <= 0)
 		return false;
 

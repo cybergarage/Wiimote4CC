@@ -241,6 +241,7 @@ void DrawRemoteData(WiiRemote *wiiRemote, HWND hWnd)
 	char hexBuf[32];
 	std::string remoteInStrBuf;
 	unsigned char *remoteInBuf = wiiRemote->getInputByteBuffer();
+	remoteInStrBuf.append("Raw Data : ");
 	for (int n=0; n< wiiRemote->getOutputByteLength(); n++) {
 		sprintf(hexBuf, "%02X", (int)remoteInBuf[n]);
 		remoteInStrBuf.append(hexBuf);
@@ -248,6 +249,28 @@ void DrawRemoteData(WiiRemote *wiiRemote, HWND hWnd)
 	}
 
 	DrawText2D(0, 0, remoteInStrBuf.c_str());
+
+	sprintf(hexBuf, "X Y Z : %+d %+d %+d",
+		(wiiRemote->getXMotion()-0x80),
+		(wiiRemote->getYMotion()-0x80),
+		(wiiRemote->getZMotion()-0x80)
+		);
+	DrawText2D(0, WII_EARTHMAP_OGL_FONT_SIZE*2, hexBuf);
+
+	sprintf(hexBuf, "Button : %s %s %s %s %s %s %s %s %s %s %s",
+		(wiiRemote->IsAPressed() ? "A" : " "),
+		(wiiRemote->IsBPressed() ? "B" : " "),
+		(wiiRemote->IsOnePressed() ? "1" : " "),
+		(wiiRemote->IsTwoPressed() ? "2" : " "),
+		(wiiRemote->IsUpPressed() ? "U" : " "),
+		(wiiRemote->IsDownPressed() ? "D" : " "),
+		(wiiRemote->IsLeftPressed() ? "L" : " "),
+		(wiiRemote->IsRightPressed() ? "R" : " "),
+		(wiiRemote->IsMinusPressed() ? "-" : " "),
+		(wiiRemote->IsPlusPressed() ? "+" : " "),
+		(wiiRemote->IsHomePressed() ? "H" : " ")
+		);
+	DrawText2D(0, WII_EARTHMAP_OGL_FONT_SIZE, hexBuf);
 
 	glMatrixMode(GL_PROJECTION);
 	glPopMatrix();
@@ -314,7 +337,7 @@ int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdL
 				szAppName,
 				szTitle,
 				WS_OVERLAPPEDWINDOW | WS_CLIPCHILDREN | WS_CLIPSIBLINGS,
-				CW_USEDEFAULT, CW_USEDEFAULT, 600, 600,
+				CW_USEDEFAULT, CW_USEDEFAULT, 800, 800,
 				NULL,	 
 				NULL,	 
 				hInstance,
