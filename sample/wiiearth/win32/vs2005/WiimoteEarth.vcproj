@@ -117,7 +117,7 @@
 			IntermediateDirectory=".\Release"
 			ConfigurationType="1"
 			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC60.vsprops"
-			UseOfMFC="0"
+			UseOfMFC="2"
 			ATLMinimizesCRunTimeLibraryUsage="false"
 			CharacterSet="2"
 			>
@@ -149,7 +149,7 @@
 				AdditionalIncludeDirectories="../../../../include,../../"
 				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;CX3D_SUPPORT_OPENGL;CX3D_SUPPORT_X3D;CX3D_SUPPORT_JPEG"
 				StringPooling="true"
-				RuntimeLibrary="0"
+				RuntimeLibrary="2"
 				EnableFunctionLevelLinking="true"
 				PrecompiledHeaderFile=".\Release/WiimoteEarth.pch"
 				AssemblerListingLocation=".\Release/"
@@ -171,7 +171,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib opengl32.lib glu32.lib glaux.lib winmm.lib xerces-c_2.lib libjpeg.lib CyberX3D.lib hid.lib setupapi.lib"
+				AdditionalDependencies="opengl32.lib glu32.lib glaux.lib winmm.lib user32.lib gdi32.lib comdlg32.lib xerces-c_2.lib libjpeg.lib CyberX3D.lib hid.lib setupapi.lib"
 				OutputFile="$(ProjectName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
