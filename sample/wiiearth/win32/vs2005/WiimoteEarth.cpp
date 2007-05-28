@@ -281,6 +281,40 @@ void DrawRemoteData(Wiimote *wiimote, HWND hWnd)
 }
 
 ////////////////////////////////////////////////////////// 
+//  MoveViewPoint
+////////////////////////////////////////////////////////// 
+
+void MoveViewPoint(Wiimote *wiimote, SceneGraph *sg)
+{
+	ViewpointNode *view = (ViewpointNode *)sg->findNode("View");
+	if (!view)
+		return;
+	float viewPos[3];
+	view->getPosition(viewPos);
+	if (wiimote->IsAPressed())
+		viewPos[2] -= 1.0f;
+	if (wiimote->IsBPressed())
+		viewPos[2] += 1.0f;
+	if (viewPos[2] < 10.0f)
+		viewPos[2] = 10.0f;
+	view->setPosition(viewPos);
+}
+
+////////////////////////////////////////////////////////// 
+//  RotateEarth
+////////////////////////////////////////////////////////// 
+
+void RotateEarth(Wiimote *wiimote, SceneGraph *sg)
+{
+	TransformNode *earthTransZ = (TransformNode *)sg->findNode("EarthZ");
+	if (earthTransZ)
+		earthTransZ->setRotation(0.0, 0.0, -1.0, (3.14 * ((float)(wiimote->getXMotion()-0x80)/180.0) * 2.0f));
+	TransformNode *earthTransX = (TransformNode *)sg->findNode("EarthX");
+	if (earthTransX)
+		earthTransX->setRotation(1.0, 0.0, 0.0, (3.14 * ((float)(wiimote->getYMotion()-0x80)/180.0) * 2.0f));
+}
+
+////////////////////////////////////////////////////////// 
 //  OnPaint
 ////////////////////////////////////////////////////////// 
 
@@ -292,6 +326,8 @@ void OnPaint(HWND hWnd)
 	if (wiimote.isConnected()) {
 		wiimote.read();
 		DrawRemoteData(&wiimote, hWnd);
+		RotateEarth(&wiimote, &sceneGraph);
+		MoveViewPoint(&wiimote, &sceneGraph);
 	}
 	SwapBuffers(wglGetCurrentDC());
 	EndPaint(hWnd, &ps); 
