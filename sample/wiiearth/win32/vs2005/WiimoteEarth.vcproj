@@ -76,7 +76,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="opengl32.lib glu32.lib glaux.lib winmm.lib user32.lib gdi32.lib comdlg32.lib xerces-c_2.lib libjpeg.lib CyberX3D.lib hid.lib setupapi.lib"
-				OutputFile="WiimoteEarth.exe"
+				OutputFile="$(ProjectName).exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
@@ -172,7 +172,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib opengl32.lib glu32.lib glaux.lib winmm.lib xerces-c_2.lib libjpeg.lib CyberX3D.lib hid.lib setupapi.lib"
-				OutputFile="WiimoteEarth.exe"
+				OutputFile="$(ProjectName).exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
 				ProgramDatabaseFile=".\Release/WiimoteEarth.pdb"
