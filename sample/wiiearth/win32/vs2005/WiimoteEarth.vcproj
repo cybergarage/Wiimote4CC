@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="WiiEarthMap"
+	Name="WiimoteEarth"
 	ProjectGUID="{1F0CE6EA-60FB-47DD-ACE1-600743B299CE}"
-	RootNamespace="WiiEarthMap"
+	RootNamespace="WiimoteEarth"
 	Keyword="MFCProj"
 	>
 	<Platforms>
@@ -43,7 +43,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\Debug/WiiEarthMap.tlb"
+				TypeLibraryName=".\Debug/WiimoteEarth.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -54,7 +54,7 @@
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
-				PrecompiledHeaderFile=".\Debug/WiiEarthMap.pch"
+				PrecompiledHeaderFile=".\Debug/WiimoteEarth.pch"
 				AssemblerListingLocation=".\Debug/"
 				ObjectFile=".\Debug/"
 				ProgramDataBaseFileName=".\Debug/"
@@ -76,11 +76,11 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="opengl32.lib glu32.lib glaux.lib winmm.lib user32.lib gdi32.lib comdlg32.lib xerces-c_2.lib libjpeg.lib C:\src\cx3dcc\lib\win32\vs2005\CyberX3D.lib hid.lib setupapi.lib"
-				OutputFile="WiiEarthMap.exe"
+				OutputFile="WiimoteEarth.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
 				GenerateDebugInformation="true"
-				ProgramDatabaseFile=".\Debug/WiiEarthMap.pdb"
+				ProgramDatabaseFile=".\Debug/WiimoteEarth.pdb"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -96,7 +96,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Debug/WiiEarthMap.bsc"
+				OutputFile=".\Debug/WiimoteEarth.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -139,7 +139,7 @@
 				MkTypLibCompatible="true"
 				SuppressStartupBanner="true"
 				TargetEnvironment="1"
-				TypeLibraryName=".\Release/WiiEarthMap.tlb"
+				TypeLibraryName=".\Release/WiimoteEarth.tlb"
 				HeaderFileName=""
 			/>
 			<Tool
@@ -151,7 +151,7 @@
 				StringPooling="true"
 				RuntimeLibrary="0"
 				EnableFunctionLevelLinking="true"
-				PrecompiledHeaderFile=".\Release/WiiEarthMap.pch"
+				PrecompiledHeaderFile=".\Release/WiimoteEarth.pch"
 				AssemblerListingLocation=".\Release/"
 				ObjectFile=".\Release/"
 				ProgramDataBaseFileName=".\Release/"
@@ -172,10 +172,10 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="odbc32.lib odbccp32.lib opengl32.lib glu32.lib glaux.lib winmm.lib xerces-c_2.lib libjpeg.lib C:\src\cx3dcc\lib\win32\vs2005\CyberX3D.lib hid.lib setupapi.lib"
-				OutputFile="WiiEarthMap.exe"
+				OutputFile="WiimoteEarth.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"
-				ProgramDatabaseFile=".\Release/WiiEarthMap.pdb"
+				ProgramDatabaseFile=".\Release/WiimoteEarth.pdb"
 				SubSystem="2"
 				TargetMachine="1"
 			/>
@@ -191,7 +191,7 @@
 			<Tool
 				Name="VCBscMakeTool"
 				SuppressStartupBanner="true"
-				OutputFile=".\Release/WiiEarthMap.bsc"
+				OutputFile=".\Release/WiimoteEarth.bsc"
 			/>
 			<Tool
 				Name="VCFxCopTool"
@@ -215,11 +215,11 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath=".\WiiEarthMap.cpp"
+				RelativePath=".\WiimoteEarth.cpp"
 				>
 			</File>
 			<File
-				RelativePath="WiiEarthMap.rc"
+				RelativePath="WiimoteEarth.rc"
 				>
 				<FileConfiguration
 					Name="Debug|Win32"
@@ -248,7 +248,7 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
-				RelativePath="..\..\WiiEarthMap.h"
+				RelativePath="..\..\WiimoteEarth.h"
 				>
 			</File>
 			<File

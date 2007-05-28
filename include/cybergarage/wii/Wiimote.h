@@ -4,7 +4,7 @@
 *
 *	Copyright (C) Satoshi Konno 2007
 *
-*	File:	WiiRemote.cpp
+*	File:	Wiimote.cpp
 *
 ******************************************************************/
 
@@ -15,7 +15,7 @@
 
 namespace CyberGarage {
 
-class WiiRemote : public UsbHID
+class Wiimote : public UsbHID
 {
 
 	static const int VENDER_ID;
@@ -23,8 +23,8 @@ class WiiRemote : public UsbHID
 
 public:
 
-	WiiRemote();
-	virtual ~WiiRemote();
+	Wiimote();
+	virtual ~Wiimote();
 
 	////////////////////////////////////////////////
 	//	Functions

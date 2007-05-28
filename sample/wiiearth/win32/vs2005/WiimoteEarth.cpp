@@ -4,7 +4,7 @@
 *
 *	Copyright (C) Satoshi Konno 2007
 *
-*	File:	WiiEarthMap.cpp
+*	File:	WiimoteEarth.cpp
 *
 ******************************************************************/
 #include <windows.h>   
@@ -14,19 +14,20 @@
 #include <GL/glu.h>
 #include <GL/glaux.h>
 #include <cybergarage/x3d/CyberX3D.h>
-#include <cybergarage/wii/WiiRemote.h>
+#include <cybergarage/wii/Wiimote.h>
 #include "X3DBrowserFunc.h"
-#include "WiiEarthMap.h"
+#include "WiimoteEarth.h"
 #include "resource.h"
 
-using namespace Wiimote;
+using namespace CyberGarage;
+using namespace CyberX3D;
 
 static char		szTitle[] = "Wii Earth Map for WIN32";
 static int		mouseButton = MOUSE_BUTTON_NONE;
 static int		mxPos, myPos;
 
 static SceneGraph sceneGraph;
-static WiiRemote wiiRemote;
+static Wiimote wiimote;
 
 LONG WINAPI WndProc( HWND, UINT, WPARAM, LPARAM);
 
@@ -216,7 +217,7 @@ void DrawText2D(int x, int y, const char *string)
 	glCallLists(strlen(string), GL_UNSIGNED_BYTE, string) ; 
 }
 
-void DrawRemoteData(WiiRemote *wiiRemote, HWND hWnd)
+void DrawRemoteData(Wiimote *wiimote, HWND hWnd)
 {
 	glShadeModel (GL_FLAT);
 	glDisable(GL_CULL_FACE);
@@ -240,9 +241,9 @@ void DrawRemoteData(WiiRemote *wiiRemote, HWND hWnd)
 
 	char hexBuf[32];
 	std::string remoteInStrBuf;
-	unsigned char *remoteInBuf = wiiRemote->getInputByteBuffer();
+	unsigned char *remoteInBuf = wiimote->getInputByteBuffer();
 	remoteInStrBuf.append("Raw Data : ");
-	for (int n=0; n< wiiRemote->getOutputByteLength(); n++) {
+	for (int n=0; n< wiimote->getOutputByteLength(); n++) {
 		sprintf(hexBuf, "%02X", (int)remoteInBuf[n]);
 		remoteInStrBuf.append(hexBuf);
 		remoteInStrBuf.append(" ");
@@ -251,24 +252,24 @@ void DrawRemoteData(WiiRemote *wiiRemote, HWND hWnd)
 	DrawText2D(0, 0, remoteInStrBuf.c_str());
 
 	sprintf(hexBuf, "X Y Z : %+d %+d %+d",
-		(wiiRemote->getXMotion()-0x80),
-		(wiiRemote->getYMotion()-0x80),
-		(wiiRemote->getZMotion()-0x80)
+		(wiimote->getXMotion()-0x80),
+		(wiimote->getYMotion()-0x80),
+		(wiimote->getZMotion()-0x80)
 		);
 	DrawText2D(0, WII_EARTHMAP_OGL_FONT_SIZE*2, hexBuf);
 
 	sprintf(hexBuf, "Button : %s %s %s %s %s %s %s %s %s %s %s",
-		(wiiRemote->IsAPressed() ? "A" : " "),
-		(wiiRemote->IsBPressed() ? "B" : " "),
-		(wiiRemote->IsOnePressed() ? "1" : " "),
-		(wiiRemote->IsTwoPressed() ? "2" : " "),
-		(wiiRemote->IsUpPressed() ? "U" : " "),
-		(wiiRemote->IsDownPressed() ? "D" : " "),
-		(wiiRemote->IsLeftPressed() ? "L" : " "),
-		(wiiRemote->IsRightPressed() ? "R" : " "),
-		(wiiRemote->IsMinusPressed() ? "-" : " "),
-		(wiiRemote->IsPlusPressed() ? "+" : " "),
-		(wiiRemote->IsHomePressed() ? "H" : " ")
+		(wiimote->IsAPressed() ? "A" : " "),
+		(wiimote->IsBPressed() ? "B" : " "),
+		(wiimote->IsOnePressed() ? "1" : " "),
+		(wiimote->IsTwoPressed() ? "2" : " "),
+		(wiimote->IsUpPressed() ? "U" : " "),
+		(wiimote->IsDownPressed() ? "D" : " "),
+		(wiimote->IsLeftPressed() ? "L" : " "),
+		(wiimote->IsRightPressed() ? "R" : " "),
+		(wiimote->IsMinusPressed() ? "-" : " "),
+		(wiimote->IsPlusPressed() ? "+" : " "),
+		(wiimote->IsHomePressed() ? "H" : " ")
 		);
 	DrawText2D(0, WII_EARTHMAP_OGL_FONT_SIZE, hexBuf);
 
@@ -288,9 +289,9 @@ void OnPaint(HWND hWnd)
 	PAINTSTRUCT ps;
 	BeginPaint(hWnd, &ps); 
 	DrawSceneGraph(&sceneGraph, OGL_RENDERING_TEXTURE);
-	if (wiiRemote.isConnected()) {
-		wiiRemote.read();
-		DrawRemoteData(&wiiRemote, hWnd);
+	if (wiimote.isConnected()) {
+		wiimote.read();
+		DrawRemoteData(&wiimote, hWnd);
 	}
 	SwapBuffers(wglGetCurrentDC());
 	EndPaint(hWnd, &ps); 
@@ -315,7 +316,7 @@ void MoveViewpoint(HWND hWnd, SceneGraph *sg, int mosx, int mosy)
 
 int WINAPI WinMain (HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpszCmdLine, int nCmdShow)
 {	
-	static char szAppName[] = "WiiEarthMap";
+	static char szAppName[] = "WiimoteEarth";
 	WNDCLASS	wc;
 	MSG			msg; 
 	HWND		hWnd;
@@ -376,7 +377,7 @@ LONG WINAPI WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		hDC = GetDC (hWnd);
 		wglMakeCurrent (hDC, hRC);
 		InitializeSceneGraph(hWnd, sg);
-		wiiRemote.open();
+		wiimote.open();
 		SetTimer(hWnd, 1, 100, NULL);
 		return 0;
 
@@ -430,8 +431,8 @@ LONG WINAPI WndProc( HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam )
 		return 0;
 
 	case WM_DEVICECHANGE:
-		if (wiiRemote.isConnected() == false)
-			wiiRemote.open();
+		if (wiimote.isConnected() == false)
+			wiimote.open();
 		return 0;
 
 	case WM_DESTROY:

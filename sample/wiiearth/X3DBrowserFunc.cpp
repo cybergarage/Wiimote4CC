@@ -10,7 +10,7 @@
 
 #include "X3DBrowserFunc.h"
 
-using namespace Wiimote;
+using namespace CyberX3D;
 
 #ifdef CX3D_SUPPORT_OPENGL
 

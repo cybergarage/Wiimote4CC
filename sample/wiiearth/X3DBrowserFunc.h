@@ -11,8 +11,6 @@
 #ifndef _X3DBROWSERFUNC_H_
 #define _X3DBROWSERFUNC_H_
 
-#include <cybergarage/wii/Wiimote.h>
-
 #ifdef WIN32
 #include <windows.h>
 #endif
@@ -26,7 +24,10 @@
 #include <GL/glut.h>
 #endif
 
-using namespace Wiimote;
+#include <cybergarage/x3d/CyberX3D.h>
+
+
+using namespace CyberX3D;
 
 enum {
 MOUSE_BUTTON_NONE,

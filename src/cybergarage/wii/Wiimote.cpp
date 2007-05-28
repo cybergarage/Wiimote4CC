@@ -4,22 +4,22 @@
 *
 *	Copyright (C) Satoshi Konno 2007
 *
-*	File:	WiiRemote.cpp
+*	File:	Wiimote.cpp
 *
 ******************************************************************/
 
-#include <cybergarage/wii/WiiRemote.h>
+#include <cybergarage/wii/Wiimote.h>
 
 using namespace CyberGarage;
 
-const int WiiRemote::VENDER_ID = 0x057E;
-const int WiiRemote::PRODUCT_ID = 0x0306;
+const int Wiimote::VENDER_ID = 0x057E;
+const int Wiimote::PRODUCT_ID = 0x0306;
 
 ////////////////////////////////////////////////
 //	Constructor
 ////////////////////////////////////////////////
 
-WiiRemote::WiiRemote() 
+Wiimote::Wiimote() 
 {
 }
 
@@ -27,7 +27,7 @@ WiiRemote::WiiRemote()
 //	Destructor
 ////////////////////////////////////////////////
 
-WiiRemote::~WiiRemote()
+Wiimote::~Wiimote()
 {
 }
 
@@ -35,7 +35,7 @@ WiiRemote::~WiiRemote()
 //	open 
 ////////////////////////////////////////////////
 
-bool WiiRemote::open()
+bool Wiimote::open()
 {
 	bool openRes = UsbHID::open(VENDER_ID, PRODUCT_ID);
 	if (!openRes)
@@ -59,7 +59,7 @@ bool WiiRemote::open()
 //	setLEDs
 ////////////////////////////////////////////////
 
-bool WiiRemote::setLEDs(bool led1, bool led2, bool led3, bool led4)
+bool Wiimote::setLEDs(bool led1, bool led2, bool led3, bool led4)
 {
 	unsigned char *outBuf = getOutputByteBuffer();
 

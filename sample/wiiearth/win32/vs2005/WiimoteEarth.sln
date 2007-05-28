@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WiiEarthMap", "WiiEarthMap.vcproj", "{1F0CE6EA-60FB-47DD-ACE1-600743B299CE}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WiimoteEarth", "WiimoteEarth.vcproj", "{1F0CE6EA-60FB-47DD-ACE1-600743B299CE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C} = {818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}
 	EndProjectSection

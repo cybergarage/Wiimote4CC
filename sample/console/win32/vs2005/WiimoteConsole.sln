@@ -2,6 +2,11 @@
 Microsoft Visual Studio Solution File, Format Version 9.00
 # Visual Studio 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WiimoteConsole", "WiimoteConsole.vcproj", "{245462A2-97AB-4C3A-8611-250EA2D160AD}"
+	ProjectSection(ProjectDependencies) = postProject
+		{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C} = {818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CgWiimoteLib", "..\..\..\..\lib\win32\vs2005\CgWiimoteLib.vcproj", "{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +18,10 @@ Global
 		{245462A2-97AB-4C3A-8611-250EA2D160AD}.Debug|Win32.Build.0 = Debug|Win32
 		{245462A2-97AB-4C3A-8611-250EA2D160AD}.Release|Win32.ActiveCfg = Release|Win32
 		{245462A2-97AB-4C3A-8611-250EA2D160AD}.Release|Win32.Build.0 = Release|Win32
+		{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}.Debug|Win32.Build.0 = Debug|Win32
+		{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}.Release|Win32.ActiveCfg = Release|Win32
+		{818BC8D5-6A9E-49C9-BC4A-F4536D8E6F8C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
