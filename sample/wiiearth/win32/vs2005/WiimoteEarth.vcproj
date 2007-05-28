@@ -49,7 +49,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="../../../../include,../../, c:\src\cx3dcc\include"
+				AdditionalIncludeDirectories="../../../../include,../../"
 				PreprocessorDefinitions="_DEBUG;WIN32;_WINDOWS;CX3D_SUPPORT_OPENGL;CX3D_SUPPORT_X3D;CX3D_SUPPORT_JPEG"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
@@ -75,7 +75,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="opengl32.lib glu32.lib glaux.lib winmm.lib user32.lib gdi32.lib comdlg32.lib xerces-c_2.lib libjpeg.lib C:\src\cx3dcc\lib\win32\vs2005\CyberX3D.lib hid.lib setupapi.lib"
+				AdditionalDependencies="opengl32.lib glu32.lib glaux.lib winmm.lib user32.lib gdi32.lib comdlg32.lib xerces-c_2.lib libjpeg.lib CyberX3D.lib hid.lib setupapi.lib"
 				OutputFile="WiimoteEarth.exe"
 				LinkIncremental="2"
 				SuppressStartupBanner="true"
@@ -146,7 +146,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="2"
 				InlineFunctionExpansion="1"
-				AdditionalIncludeDirectories="../../../../include,../../, c:\src\cx3dcc\include"
+				AdditionalIncludeDirectories="../../../../include,../../"
 				PreprocessorDefinitions="NDEBUG;WIN32;_WINDOWS;CX3D_SUPPORT_OPENGL;CX3D_SUPPORT_X3D;CX3D_SUPPORT_JPEG"
 				StringPooling="true"
 				RuntimeLibrary="0"
@@ -171,7 +171,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalDependencies="odbc32.lib odbccp32.lib opengl32.lib glu32.lib glaux.lib winmm.lib xerces-c_2.lib libjpeg.lib C:\src\cx3dcc\lib\win32\vs2005\CyberX3D.lib hid.lib setupapi.lib"
+				AdditionalDependencies="odbc32.lib odbccp32.lib opengl32.lib glu32.lib glaux.lib winmm.lib xerces-c_2.lib libjpeg.lib CyberX3D.lib hid.lib setupapi.lib"
 				OutputFile="WiimoteEarth.exe"
 				LinkIncremental="1"
 				SuppressStartupBanner="true"

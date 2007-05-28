@@ -7,7 +7,7 @@
 *	File:	WiimoteEarth.cpp
 *
 ******************************************************************/
-#include <windows.h>   
+#include <windows.h>
 #include <windowsx.h>   
 #include <commdlg.h>   
 #include <GL/gl.h>
