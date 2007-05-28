@@ -1,8 +1,8 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	X3DBrowserFunc.cpp
 *
@@ -11,7 +11,7 @@
 #ifndef _X3DBROWSERFUNC_H_
 #define _X3DBROWSERFUNC_H_
 
-#include <cybergarage/x3d/CyberX3D.h>
+#include <cybergarage/wii/Wiimote.h>
 
 #ifdef WIN32
 #include <windows.h>
@@ -26,7 +26,7 @@
 #include <GL/glut.h>
 #endif
 
-using namespace CyberX3D;
+using namespace Wiimote;
 
 enum {
 MOUSE_BUTTON_NONE,

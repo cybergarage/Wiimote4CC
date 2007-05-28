@@ -1,19 +1,19 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	WiiRemote.cpp
 *
 ******************************************************************/
 
-#ifndef _CX3D_WIIREMOTE_H_
-#define _CX3D_WIIREMOTE_H_
+#ifndef _CG_WIIREMOTE_H_
+#define _CG_WIIREMOTE_H_
 
-#include "UsbHID.h"
+#include <cybergarage/wii/UsbHID.h>
 
-namespace CyberX3D {
+namespace CyberGarage {
 
 class WiiRemote : public UsbHID
 {

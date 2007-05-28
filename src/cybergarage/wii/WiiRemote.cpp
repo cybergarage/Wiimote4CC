@@ -1,16 +1,16 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	WiiRemote.cpp
 *
 ******************************************************************/
 
-#include "WiiRemote.h"
+#include <cybergarage/wii/WiiRemote.h>
 
-using namespace CyberX3D;
+using namespace CyberGarage;
 
 const int WiiRemote::VENDER_ID = 0x057E;
 const int WiiRemote::PRODUCT_ID = 0x0306;

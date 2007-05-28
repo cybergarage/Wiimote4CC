@@ -1,8 +1,8 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	WiiEarthMap.cpp
 *
@@ -14,12 +14,12 @@
 #include <GL/glu.h>
 #include <GL/glaux.h>
 #include <cybergarage/x3d/CyberX3D.h>
+#include <cybergarage/wii/WiiRemote.h>
 #include "X3DBrowserFunc.h"
 #include "WiiEarthMap.h"
-#include "WiiRemote.h"
 #include "resource.h"
 
-using namespace CyberX3D;
+using namespace Wiimote;
 
 static char		szTitle[] = "Wii Earth Map for WIN32";
 static int		mouseButton = MOUSE_BUTTON_NONE;

@@ -1,8 +1,8 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2007
+*	Copyright (C) Satoshi Konno 1996-Wiimote
 *
 *	File:	WiiEarthMap.cpp
 *

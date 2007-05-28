@@ -215,10 +215,6 @@
 			Filter="cpp;c;cxx;rc;def;r;odl;idl;hpj;bat"
 			>
 			<File
-				RelativePath="..\..\UsbHID.cpp"
-				>
-			</File>
-			<File
 				RelativePath=".\WiiEarthMap.cpp"
 				>
 			</File>
@@ -243,10 +239,6 @@
 				</FileConfiguration>
 			</File>
 			<File
-				RelativePath="..\..\WiiRemote.cpp"
-				>
-			</File>
-			<File
 				RelativePath="..\..\X3DBrowserFunc.cpp"
 				>
 			</File>
@@ -256,15 +248,7 @@
 			Filter="h;hpp;hxx;hm;inl"
 			>
 			<File
-				RelativePath="..\..\UsbHID.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\WiiEarthMap.h"
-				>
-			</File>
-			<File
-				RelativePath="..\..\WiiRemote.h"
 				>
 			</File>
 			<File

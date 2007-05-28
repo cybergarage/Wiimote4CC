@@ -1,15 +1,15 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	UsbHID.cpp
 *
 ******************************************************************/
 
-#ifndef _CX3D_USBHID_H_
-#define _CX3D_USBHID_H_
+#ifndef _CG_USBHID_H_
+#define _CG_USBHID_H_
 
 #if defined(WIN32)
 #include <windows.h>
@@ -19,7 +19,7 @@ extern "C" {
 }
 #endif
 
-namespace CyberX3D {
+namespace CyberGarage {
 
 class UsbHID
 {

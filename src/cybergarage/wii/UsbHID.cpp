@@ -1,16 +1,16 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	UsbHID.cpp
 *
 ******************************************************************/
 
-#include "UsbHID.h"
+#include <cybergarage/wii/UsbHID.h>
 
-using namespace CyberX3D;
+using namespace CyberGarage;
 
 ////////////////////////////////////////////////
 //	Constructor
@@ -23,7 +23,7 @@ UsbHID::UsbHID()
 	mInputBuf = NULL;
 	mOutputBuf = NULL;
 
-	mDevEvent = CreateEvent(NULL, FALSE, TRUE, "");
+	mDevEvent = CreateEvent(NULL, FALSE, TRUE, NULL);
 	memset(&mOverLapped, 0, sizeof(OVERLAPPED));
 	mOverLapped.hEvent = mDevEvent;
 	mOverLapped.Offset = 0;

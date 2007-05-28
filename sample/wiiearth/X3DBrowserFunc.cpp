@@ -1,8 +1,8 @@
 /******************************************************************
 *
-*	CyberX3D for C++
+*	Wiimote for C++
 *
-*	Copyright (C) Satoshi Konno 1996-2003
+*	Copyright (C) Satoshi Konno 2007
 *
 *	File:	X3DBrowserFunc.cpp
 *
@@ -10,7 +10,7 @@
 
 #include "X3DBrowserFunc.h"
 
-using namespace CyberX3D;
+using namespace Wiimote;
 
 #ifdef CX3D_SUPPORT_OPENGL
 
